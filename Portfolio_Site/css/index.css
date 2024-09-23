@@ -1,0 +1,326 @@
+html {
+    scroll-behavior: smooth; /*This ensures that the page scrolling is smooth when the buttons on the nav bar is clicked */
+}
+
+body {
+    background:#1b1917 50%;
+    margin:0%;  /* This ensures our site displays all the way to the edge of the browser screen */;
+    font-family: Roboto, 'Trebuchet MS', sans-serif;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: #1f1f1f91;
+}
+
+#my-icons-large {
+    font-size: 70px;
+}
+
+#my-icons-medium {
+    font-size: 40px;
+}
+
+  .Home_Panel {
+    background: rgba(46, 46, 46, 0.7);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; /* Remove or reduce this if it exists */
+    padding-bottom: 0; /* Remove or reduce this if it exists */
+    height: 100vh;  /* This sets the height of the panel to 100% of the viewport height */
+
+}
+
+  #Home_Video {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -5;
+}
+
+.Important_Text {
+    color: white; /* Makes the font color white */
+    font-family: Roboto, sans-serif; /* Changes the font to Roboto */
+    text-align: center;
+    margin-top: 5%; /* Adds space between the top of the text and the top of the page */
+}
+
+.highlight {
+    color: #ff0000;
+}
+
+/**
+ * Styles for the page contents.
+ *
+ * The .Page_Contents class is used to style the main content section of the page.
+ * It sets a linear gradient background for a seemless transition from the video to the texts, adjusts the margin and padding, and applies
+ * flexbox properties for a column layout with a gap between elements.
+ */
+.Page_Contents {
+    background: linear-gradient(180deg, rgba(46, 46, 46, 0.7) 0%, rgba(46, 46, 46, 0.8) 3%, #1f1f1f 20%);
+    margin-top: 0; /* Remove or reduce this if it exists */
+    padding-top: 0;
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+}
+
+.Page_Contents h1 {
+    margin-top: 0;
+}
+
+.box_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(71, 71, 71, 0.32);
+    color: rgb(236, 236, 236);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding:48px;
+    margin: 5%;
+}
+
+.c_right_picture {
+        float: right;
+        max-width: 100%;
+        height: auto;
+}
+
+.c_left_picture {
+    float: left;
+    max-width: 50%;
+    height: auto;
+}
+
+.demo-card-wide.mdl-card {
+    width: 512px;
+    background-color: rgb(53, 53, 53);
+  }
+
+  .demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../assets/demos/welcome_card.jpg') center / cover;
+  }
+  
+  .demo-card-wide > .mdl-card__menu {
+    color: #fff;
+  }
+
+
+.Column_1 {
+    float: left;
+    width: 50%; /* This ensures the column takes up half of the page width */
+    padding: 10px;
+    padding-top: 3%; /* This ensures there is space between the top of the column and our headings */
+   
+
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+}
+
+/* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
+.Column_tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+.Row:after {
+	content: ""; /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+	display: table; /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+	clear: both; /* This clears any other elements from floating on the left or the right of an element */
+}
+
+.github-container {
+    box-sizing: border-box;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 3rem;
+    place-content: center;
+    place-items: center;
+    margin-top: 1rem;
+    padding: 2rem;
+    width: 100%;
+}   
+
+.mdl-card__supporting-text {
+    p{
+        font-family: Roboto, sans-serif;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+}
+
+
+/***** Contact Form Styling *****/
+/* Button used to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+    position: fixed; /* The element is positioned relative to the viewport and stays in the same location no matter what */
+    bottom: 1.75vw; /* Positions the button slightly up from the bottom of the viewport */
+    right: 1.75vw; /* Positions the viewport slightly right from the side of the viewport */
+    width: 25vw; /* Sets the width relative to the viewport width */
+    background-color: #4e4e4e57; /* Sets the background color of the button to gray */
+    color: white; /* Sets the color of the button text to black */
+    border: solid black; /* This makes a solid black border around the button */
+    cursor: pointer; /* This changes the cursor when hovered over the button to a pointer */
+    -webkit-animation: movePopup 5s; /* Animation for 5 seconds for Safari 4.0-8.0 */
+    animation: movePopup 5s; /* Animation set for 5 seconds */
+    z-index: 8;
+    border-radius: 10px; /* Adds rounded edges to the button */
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    backdrop-filter: blur(10px);
+    
+}
+
+/* movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport */
+@keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;} 
+    to {right: 1.75vw;}
+}
+
+
+
+/*
+.contact { 
+   
+}
+
+.about_contact_link {
+
+}
+*/
+
+.form-popup {
+    z-index: 8; /* This z-index ensures the contact form shows above all other elements on the page */
+    display: none; /* Set the display to none, we will use JavaScript to show the contact form */
+    position: fixed; /* The form stays in the same location no matter what */
+    bottom: .5vw; /* Slightly up from the bottom of the viewport */
+    right: .5vw; /* Slightly in from the right side of the viewport */
+}
+
+/* Form styling */
+.form-container {
+    max-width: 49vw; /* Relative sizing of the form container - 49% of the viewport width */
+    padding: 1vw; /* Adds padding between the form-popup and the form-container */
+    background-color: #979797; 
+    border-radius: 10px; /* Adds rounded edges to the button */
+}
+
+/* Input fields */
+.form-container input[type=text] {
+    width: 100%; /* The input boxes completely fill the width of the form-container */
+    padding: .93vw; /* Adds padding to the input boxes */
+    margin: .6vw 0 .6vw 0; /* Adds space between the input boxes and the labels */
+    border: none; /* Removes the border from the input boxes */
+    background: Gainsboro; /* Sets the background color of the input boxes */
+    font-size: 1vw; /* Relative font sizing based on the width of the viewport */
+}
+
+/* General styling for all buttons */
+button {
+    font-family: "Trebuchet MS", Optima;
+    letter-spacing: .3vw; /* Adds slight spacing between the letters */
+    font-size: 1.5vw; /* Relative sizing of text */
+    font-weight: bold; 
+    padding: 1.5vw; /* Adds padding to the text in the button */
+    cursor: pointer; /* Changes the cursor to pointer over button elements */
+    width: 100%; /* Sets the width of the buttons to 100% of their containers */
+    height: auto; /* Allows the height to be resized depending on the content showing */
+}
+
+/* Hover effect for contact and submit buttons */
+button:hover, .form-container .btn:hover {
+    color: white; /* This makes the text in the buttons white when hovered over */
+    background-color: black; /* The background of the button changes to black when hovered over */
+    transition-duration: 1s; /* This makes the transition last 1 second */
+    -webkit-transition-duration: 1s; /* For Safari 4.0-8.0 */
+    border-color: silver; /* The border turns silver when the button is hovered over */
+}
+
+/* Submit button */
+.form-container .btn {
+    background-color: white; 
+    color: black;
+    border-color: black;
+    margin-bottom: 1vh; /* Adds space between the submit button and the close button */
+}
+
+/* Close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+/* Styling for close button on hover */
+.form-container .cancel:hover {
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+/***** End of Contact Form Styling *****/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: #1b1917;
+    color:white;
+    text-align: center;
+  }
+
+  /* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
+@media screen and (max-width: 576px) {
+    .Column_1 {
+        overflow: auto;
+        width:100%;
+    }
+    .Column_2 {
+        overflow: auto;
+        width:100%;
+    }
+    .github-container {
+        transform: scale(0.8); /* Adjust the scale value as needed */
+    }
+    .demo-card-wide.mdl-card {
+        width: 80%;
+    }
+    .navbar {
+        font-size: 16px;
+    }
+    #Home_Video {
+        display: none;
+    }
+    #scaling-text {
+        font-size: 10.5vw;
+    }
+    .box_container {
+        flex-direction: column;
+        
+    }
+}
+
